@@ -1,0 +1,1 @@
+{"filepath": "/home/chuck/.config/GIMP/3.0/plug-ins/segany/segany_settings.json", "pythonPath": "python3", "modelType": "vit_h", "checkPtPath": "sam_vit_h_4b8939.pth", "maskType": "rgba", "segType": "Auto", "isRandomColor": false, "maskColor": [192, 28, 40, 255], "selPtCnt": 10, "selBoxPathName": "BoxPathName", "formatBinary": true}
