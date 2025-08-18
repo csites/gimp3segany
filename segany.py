@@ -237,6 +237,17 @@ def createLayers(image, maskFileNoExt, userSelColor, formatBinary):
 
                 maskVals = readMaskFile(filepath, formatBinary)
                 maskColor = userSelColor if userSelColor is not None else list(uniqueColors[idx]) + [255]
+            
+            #     --- FIX: Populate a single bytearray instead of a list of strings
+                pixels = bytearray(width * height * pix_size)
+                for x, row in enumerate(maskVals):
+                    for y, p in enumerate(row):
+                        if p:
+                            pos = (y + width * x) * pix_size
+                            pixels[pos: pos + pix_size] = mask_color_bytes
+            
+                buffer.set(rect, babl_format, bytes(pixels))
+                # --- END FIX
 
                 x = 0
                 for line in maskVals:
